@@ -15,6 +15,7 @@
         <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
         <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
         <link rel="shortcut icon" href="assets/img/favicon.png?v=2" type="image/x-icon">
+        <script src="assets/js/scrollfade.js"></script>
         <link rel="stylesheet" href="assets/style/style.css" media="screen">
         <script src="assets/script/index.js" defer></script>
     </head>
@@ -40,7 +41,7 @@
                     <div class="hero-text">
                         <h2>With <Span>Rider</Span></h2>
                         <p>Get your package when you need it the most</p>
-                        <button>Track Package</button>
+                        <a href="#tracking">Track Package</a>
                     </div>
                 </div>
             </section>
@@ -75,36 +76,37 @@
             </section>
 
             <section>
+                <!-- Images from Canva -->
                 <div class="container">
                     <div class="partners">
-                        <div class="partner">
-                            <img src="./assets/img/partner1.png" alt="food">
+                        <div class="partner scrollFade">
+                            <img src="./assets/img/partner1.png" alt="Bigbite">
                         </div>
-                        <div class="partner">
-                            <img src="./assets/img/partner2.png" alt="package-delivery">
+                        <div class="partner scrollFade">
+                            <img src="./assets/img/partner2.png" alt="Olivia Fashion House">
                         </div>
-                        <div class="partner">
-                            <img src="./assets/img/partner3.png" alt="delivery-rider">
+                        <div class="partner scrollFade">
+                            <img src="./assets/img/partner3.png" alt="Monoto Fashion Expert">
                         </div>
-                        <div class="partner">
-                            <img src="./assets/img/partner4.png" alt="food">
+                        <div class="partner scrollFade">
+                            <img src="./assets/img/partner4.png" alt="Brocelle Interior Design">
                         </div>
-                        <div class="partner">
-                            <img src="./assets/img/partner5.png" alt="package-delivery">
+                        <div class="partner scrollFade">
+                            <img src="./assets/img/partner5.png" alt="Aldenaire Grocery Store">
                         </div>
-                        <div class="partner">
-                            <img src="./assets/img/partner6.png" alt="delivery-rider">
+                        <div class="partner scrollFade">
+                            <img src="./assets/img/partner6.png" alt="Urban Food Court">
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="tracking">
+            <section id="tracking" class="scrollFade">
                 <div class="container section-heading">
                     <h3>Track Your Package</h3>
                     <p> 
                         Whether it's one package or multiple shipments, 
-                        track your orders all at once by entering your tracking number.
+                        track your orders all at once. Rider offers real-time tracking.
                     </p>
                     <button class="track">Track</button>
                 </div>
@@ -112,11 +114,27 @@
 
             <section>
                 <div class="container">
-                    <div id='map'>
+                    <div id='map' class="scrollFade">
                         <div class="overlay"></div>
                     </div>
                 </div>
             </section>
+
+            <footer>
+                <div class="container footer">
+                    <div class="logo">
+                        <img src="./assets/img/favicon.png" alt="Logo">
+                    </div>
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href= #><i class="fa-brands fa-facebook"></i></a></li>
+                            <li><a href= #><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href= #><i class="fa-brands fa-twitter"></i></a></li>
+                        </ul>   
+                        <p class="copyright">Designed by Thelma Osifo &copy; 2022 All rights reserved</p>
+                    </div>
+                </div>
+            </footer>
         </main>
     </body>
 </html>

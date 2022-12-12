@@ -1,14 +1,56 @@
 'use strict';
 
-const track = document.querySelector('.track');
+// Utility functions
+function onEvent(event, selector, callback) {
+    return selector.addEventListener(event, callback);
+}
+
+function select(selector, parent = document) {
+    return parent.querySelector(selector);
+}
+
+const track = select('.track');
 const mapStructure = document.getElementById('map');
 
+let fadeElements = document.querySelectorAll('.scrollFade');
+
+function scrollFade() {
+	let viewportBottom = window.scrollY + window.innerHeight;
+
+	for (let i = 0; i < fadeElements.length; i++) {
+		let fadeElement = fadeElements[i];
+		let rect = fadeElement.getBoundingClientRect();
+
+		let elementFourth = rect.height/4;
+		let fadeIn = window.innerHeight - elementFourth;
+		let fadeOut = -(rect.height/2);
+
+		if (rect.top <= fadeIn) {
+			fadeElement.classList.add('is-visible');
+			fadeElement.classList.remove('scrollFade-hidden');
+		} else {
+			fadeElement.classList.remove('is-visible');
+			fadeElement.classList.add('scrollFade-hidden');
+		}
+
+		if (rect.top <= fadeOut) {
+			fadeElement.classList.remove('is-visible');
+			fadeElement.classList.add('scrollFade-hidden');
+		}
+	}
+}
+
+document.addEventListener('scroll', scrollFade);
+window.addEventListener('resize', scrollFade);
+document.addEventListener('DOMContentLoaded', () => {
+    scrollFade();
+});
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidGhlbG1hLWRldiIsImEiOiJjbGJncnJqc2wwaXhjM29xd2liMXYzbmE4In0.c2LzFGTr8v0YUQlSfSe3mQ';
 
 function getLocation(position) {
     const { latitude, longitude } = position.coords;
-    setUpMap([-97.19318,49.81453]);
+    setUpMap([longitude,latitude]);
 }
 
 function errorHandler() {
@@ -44,7 +86,8 @@ function setUpMap(center) {
         center: center,
         zoom: 15,
         attributionControl: false,
-        Marker: false
+        Marker: false,
+        pitch: 50,
     });
 
     map.addControl(new mapboxgl.NavigationControl());
@@ -67,7 +110,7 @@ function setUpMap(center) {
 
 // Event listeners
 
-track.addEventListener('click', () => { 
+onEvent('click', track, () => { 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getLocation, errorHandler, options);
     } else {

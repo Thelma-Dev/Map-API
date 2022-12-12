@@ -159,7 +159,7 @@ section {
     font-weight: 400;
 }
 
-.hero-text button, .track {
+.hero-text a, .track {
     width: 180px;
     height: 50px;
     border: none;
@@ -172,13 +172,14 @@ section {
     background-color: var(--app-blue);
     text-align: center;
     cursor: pointer;
+    text-decoration: none;
     border-radius: var(--app-border-radius);
     transition: all 0.25s ease-in-out;
     box-shadow: 0px 5px 10px rgb(0 0 0 / 0.4);
 }
   
   
-.hero-text button:hover, .track:hover {
+.hero-text a:hover, .track:hover {
     background-color: var(--app-blue-hover);
     color: #fff;
 }
@@ -278,10 +279,12 @@ img {
     margin: 30px auto;
     width: 100%;
     height: 450px;
+    border-radius: var(--app-border-radius);
 }
 
 .overlay {
     min-height: 450px;
+    border-radius: var(--app-border-radius);
     background-color: rgba(115, 115, 116, 0.3);
 }
 
@@ -302,4 +305,96 @@ img {
   
 .mapboxgl-popup-content {
     text-align: center;
+}
+
+/* -------------------------------- */
+/*           Footer                 */
+/* -------------------------------- */
+
+footer {
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+    border: none;
+    margin-top: 60px;
+    padding: 10px;
+    background-color: var(--app-dark-bg);
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    border: none;
+    border-radius: var(--app-border-radius);
+    width: 100px;
+    height: 100px;
+    margin-inline: auto;
+}
+
+.social-icons {
+    height: 100px;
+    margin-inline: auto;
+    padding: 10px;
+    border: none;
+}
+  
+.social-icons ul {
+    list-style: none;
+    text-align: center;
+}
+  
+.social-icons ul li {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    overflow: hidden;
+}
+  
+.social-icons ul li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    color: #fff;
+    background-color: rgb(255 255 255 / 0.1);
+    border: 1px solid rgb(255 255 255 / 0.15);
+    border-radius: var(--app-border-radius);
+}
+    
+.fa-brands:hover  {
+    color: var(--app-blue-hover);
+    transition: background-color 0.25s ease-in-out;
+}
+  
+p.copyright {
+    font-size: 14px;
+    color:  #adadad;
+    opacity: 0.4;
+    font-weight: 400; 
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* -------------------------------- */
+/*          Scroll Fade Animation   */
+/* -------------------------------- */
+
+.scrollFade {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.scrollFade-hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.scrollFade.is-visible {
+	opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+	pointer-events: all;
 }
