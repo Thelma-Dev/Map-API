@@ -1,0 +1,23 @@
+@import './reset.css';
+
+:root {
+    --app-dark-bg:#1a1d28;
+    --app-blue-hover:#1937fc;
+    --app-green-hover: #058545;
+    --app-light-green: #04a856;
+    --app-border-radius: 6px;
+    --app-orange:#ff833c;
+    --app-orange-hover:#f87325;
+    --text-color: #1a1d28;
+}
+
+body {
+    background-color: var(--app-dark-bg);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
