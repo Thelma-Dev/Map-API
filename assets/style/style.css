@@ -3,7 +3,7 @@
 :root {
     --app-dark-bg:#1a1d28;
     --app-blue:#3c57ff;
-    --app-blue-hover:#1937fc;
+    --app-blue-hover:#2e49fc;
     --app-light-bg: #f0f4f6;
     --app-border-radius: 6px;
     --text-color: rgb(0, 0, 0, 0.8);;
@@ -90,6 +90,34 @@ nav ul li + li {
     margin-left: 20px;
 }
 
+.login {
+    width: 20%;
+    line-height: 56px;
+    text-align: right;
+    margin: 0 15px;
+}
+  
+.login a {
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: var(--app-blue);
+    border-radius: var(--app-border-radius);
+}
+  
+.login a:hover {
+    background-color: var(--app-blue-hover);
+    color: #fff;
+    background-size: 20px;
+    text-decoration: none;
+}
+
 /* -------------------------------- */
 /* Section-Hero Image               */
 /* -------------------------------- */
@@ -100,14 +128,9 @@ section {
   
 .hero-image {
     background: var(--app-light-bg);
-    height: 85vh;
+    height: 90vh;
     position: relative;
 }
-  
-/* .overlay {
-    min-height: 100vh;
-    background-color: rgb(20 24 28 / 0.7);
-} */
   
 .hero-text {
     text-align: center;
@@ -136,7 +159,7 @@ section {
     font-weight: 400;
 }
 
-.hero-text button {
+.hero-text button, .track {
     width: 180px;
     height: 50px;
     border: none;
@@ -150,11 +173,12 @@ section {
     text-align: center;
     cursor: pointer;
     border-radius: var(--app-border-radius);
+    transition: all 0.25s ease-in-out;
     box-shadow: 0px 5px 10px rgb(0 0 0 / 0.4);
 }
   
   
-.hero-text button:hover {
+.hero-text button:hover, .track:hover {
     background-color: var(--app-blue-hover);
     color: #fff;
 }
@@ -220,7 +244,7 @@ img {
 }
 
 .two, .four {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 /* -------------------------------- */
@@ -228,7 +252,54 @@ img {
 /* -------------------------------- */
 
 .partners {
-    margin-top: 20px;
-    border: 1px solid rgb(0, 0, 0, 0.8);;
-    height: 400px;
+    margin: 30px auto;
+    border: none;
+    width: 800px;
+    height: 380px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.partner {
+    border: none;
+    width: 200px;
+    height: 150px;
+    margin-inline: auto;
+}
+
+/* -------------------------------- */
+/* Section-Map                      */
+/* -------------------------------- */
+
+#map {
+    margin: 30px auto;
+    width: 100%;
+    height: 450px;
+}
+
+.overlay {
+    min-height: 450px;
+    background-color: rgba(115, 115, 116, 0.3);
+}
+
+.marker {
+    background-image: url(../img/pindrop.png);
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+  
+.mapboxgl-popup-content {
+    text-align: center;
 }

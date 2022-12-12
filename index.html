@@ -10,6 +10,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>Rider</title>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
         <link rel="shortcut icon" href="assets/img/favicon.png?v=2" type="image/x-icon">
         <link rel="stylesheet" href="assets/style/style.css" media="screen">
         <script src="assets/script/index.js" defer></script>
@@ -24,7 +28,7 @@
                             <ul>
                                 <li><a href="#">About us</a></li>
                                 <li><a href="#">Contact</a></li>
-                                <li><a href="#">Locations</a></li>
+                                <li class="login"><a href="#">Login</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -33,7 +37,6 @@
 
             <section>
                 <div class="hero-image">
-                    <div class="overlay"></div>
                     <div class="hero-text">
                         <h2>With <Span>Rider</Span></h2>
                         <p>Get your package when you need it the most</p>
@@ -65,8 +68,8 @@
                 <div class="container section-heading">
                     <h3>A Brand You Can Trust</h3>
                     <p> 
-                        A reliable, easy courier experience is what you need to excel in today's marketplace.
-                        Rider offers same day delivery within Winnipeg.
+                        A reliable easy courier experience is what you need to excel in today's marketplace.
+                        Our partners attest to our value added services.
                     </p>
                 </div>
             </section>
@@ -74,18 +77,44 @@
             <section>
                 <div class="container">
                     <div class="partners">
-                        
+                        <div class="partner">
+                            <img src="./assets/img/partner1.png" alt="food">
+                        </div>
+                        <div class="partner">
+                            <img src="./assets/img/partner2.png" alt="package-delivery">
+                        </div>
+                        <div class="partner">
+                            <img src="./assets/img/partner3.png" alt="delivery-rider">
+                        </div>
+                        <div class="partner">
+                            <img src="./assets/img/partner4.png" alt="food">
+                        </div>
+                        <div class="partner">
+                            <img src="./assets/img/partner5.png" alt="package-delivery">
+                        </div>
+                        <div class="partner">
+                            <img src="./assets/img/partner6.png" alt="delivery-rider">
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section id="track">
+            <section id="tracking">
                 <div class="container section-heading">
                     <h3>Track Your Package</h3>
                     <p> 
                         Whether it's one package or multiple shipments, 
                         track your orders all at once by entering your tracking number.
                     </p>
+                    <button class="track">Track</button>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <div id='map'>
+                        <div class="overlay"></div>
+                    </div>
                 </div>
             </section>
         </main>
