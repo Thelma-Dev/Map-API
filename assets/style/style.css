@@ -3,7 +3,7 @@
 :root {
     --app-dark-bg:#1a1d28;
     --app-blue:#3c57ff;
-    --app-blue-hover:#2e49fc;
+    --app-blue-hover:#233ff8;
     --app-light-bg: #f0f4f6;
     --app-border-radius: 6px;
     --text-color: rgb(0, 0, 0, 0.8);;
@@ -33,9 +33,10 @@ header {
     height: 66px;
     overflow: hidden;
     background-color: transparent;
-    position: absolute;
+    position: fixed;
     z-index: 333;
     border: none;
+    background-color: var(--app-light-bg);
     padding: 10px 0px;
 }
   
@@ -48,12 +49,13 @@ header {
     height: 36px;
 }
   
-.title h1 {
+.title h1 a {
     font-size: 25px;
     font-weight: 600;
     color: var(--app-blue);
     line-height: 56px;
     text-transform: uppercase;
+    text-decoration: none;
     letter-spacing: 0.3px;
 }
   
@@ -118,6 +120,11 @@ nav ul li + li {
     text-decoration: none;
 }
 
+.hamburger-menu {
+    display: none;
+    
+}
+
 /* -------------------------------- */
 /* Section-Hero Image               */
 /* -------------------------------- */
@@ -143,7 +150,7 @@ section {
 }
   
 .hero-text h2 {
-    font-size: 80px;
+    font-size: 85px;
     font-weight: 800;
     letter-spacing: -0.2px;
 }
@@ -151,7 +158,7 @@ section {
 .hero-text h2 span {
     color: var(--app-blue);
     font-weight: 900;
-    font-size: 90px;
+    font-size: 100px;
 }
   
 .hero-text p {
@@ -177,7 +184,10 @@ section {
     transition: all 0.25s ease-in-out;
     box-shadow: 0px 5px 10px rgb(0 0 0 / 0.4);
 }
-  
+
+.track {
+    width: 120px;
+}
   
 .hero-text a:hover, .track:hover {
     background-color: var(--app-blue-hover);
@@ -187,6 +197,10 @@ section {
 /* -------------------------------- */
 /* Section-Heading                 */
 /* -------------------------------- */
+
+section#about {
+    margin-top: 40px;
+}
 
 section .section-heading {
     width: 100%;
@@ -360,7 +374,6 @@ footer {
     height: 40px;
     font-size: 28px;
     color: #fff;
-    background-color: rgb(255 255 255 / 0.1);
     border: 1px solid rgb(255 255 255 / 0.15);
     border-radius: var(--app-border-radius);
 }
@@ -398,3 +411,144 @@ p.copyright {
     transition: opacity 0.4s ease-in-out;
 	pointer-events: all;
 }
+
+/* -------------------------------- */
+/*         Media Query              */
+/* -------------------------------- */
+
+/* 500px and down */
+@media (max-width: 500px) {
+
+    .hamburger-menu {
+        display: block; 
+    }
+
+    nav ul li, .contact {
+        display: none;
+    }
+
+    #menu-toggle {
+        opacity: 0;
+    }
+
+    #menu-toggle:checked + .menu-btn > span {
+        transform: rotate(45deg);
+    }
+
+    #menu-toggle:checked + .menu-btn > span::before {
+        top: 0;
+        transform: rotate(0deg);
+    }
+
+    #menu-toggle:checked + .menu-btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    #menu-toggle:checked ~ .menu-box {
+        left: 54.5% !important;
+    }
+
+    .menu-btn {
+        position: absolute;
+        top: 38px;
+        left: 89%;
+        width: 24px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .menu-btn > span,
+    .menu-btn > span::before,
+    .menu-btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        transition-duration: .25s;
+    }
+
+    .menu-btn > span::before {
+        content: '';
+        top: -8px;
+    }
+
+    .menu-btn > span::after {
+        content: '';
+        top: 8px;
+    }
+
+    .hero-text h2 {
+        font-size: 40px;
+        font-weight: 600;
+    }
+    
+    .hero-text h2 span {
+        font-weight: 600;
+        font-size: 48px;
+    }
+      
+    .hero-text p {
+        font-size: 18px;
+    }
+
+    .hero-text a {
+        width: 160px;
+        font-size: 17px;
+        margin-top: 40px;
+    }
+
+    section#about {
+        margin-top: 60px;
+    }
+
+    section .section-heading h3 {
+        font-size: 46px;
+        font-weight: 600;
+    }
+    
+    section .section-heading p {
+        font-size: 16px;
+        width: 400px;
+    }
+
+    .pictures {
+        padding: 0px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .pic {
+        width: 200px;
+        height: 300px;
+    }
+
+    .two {
+        margin-top: 0px;
+    }
+
+    .three, .four {
+        margin-top: 10px;
+    }
+
+    .partners {
+        width: 400px;
+        height: 100%;
+        padding: 10px;
+        gap: 8px;
+    }
+    
+    .partner {
+        border: none;
+        width: 180px;
+        height: 100px;
+        margin-inline: auto;
+    }
+}
+
