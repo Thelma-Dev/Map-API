@@ -151,7 +151,7 @@ section {
 }
   
 .banner-text h2 {
-    font-size: 7.8rem;
+    font-size: 6.5rem;
     font-weight: 800;
     letter-spacing: -0.2px;
 }
@@ -159,7 +159,7 @@ section {
 .banner-text h2 span {
     color: var(--app-blue);
     font-weight: 900;
-    font-size: 7.8rem;
+    font-size: 6.5rem;
 }
   
 .banner-text p {
