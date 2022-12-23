@@ -151,7 +151,7 @@ section {
 }
   
 .banner-text h2 {
-    font-size: 85px;
+    font-size: 7.8rem;
     font-weight: 800;
     letter-spacing: -0.2px;
 }
@@ -159,7 +159,7 @@ section {
 .banner-text h2 span {
     color: var(--app-blue);
     font-weight: 900;
-    font-size: 100px;
+    font-size: 7.8rem;
 }
   
 .banner-text p {
@@ -287,7 +287,7 @@ img {
     transform: translate( -50%, -50%);
     color: #fff;
     margin: 0px auto;
-    font-size: 62px;
+    font-size: 63px;
     font-weight: 800;
     letter-spacing: -0.2px;
 }
@@ -514,14 +514,19 @@ p.copyright {
         top: 8px;
     }
 
+    .banner {
+        height: 80vh;
+    }
+
     .banner-text h2 {
-        font-size: 40px;
+        font-size: 2rem;
         font-weight: 600;
+        line-height: 66px;
     }
     
     .banner-text h2 span {
         font-weight: 600;
-        font-size: 48px;
+        font-size: 6rem;
     }
       
     .banner-text p {
@@ -559,8 +564,9 @@ p.copyright {
     }
     
     .pic {
-        width: 200px;
-        height: 300px;
+        width: 180px;
+        height: 260px;
+        margin-inline: auto;
     }
 
     .two {
