@@ -93,10 +93,11 @@ function setUpMap(center) {
     map.addControl(new mapboxgl.NavigationControl());
     for (const feature of geojson.features) {
 
-        const el = document.createElement('div');
-        el.classList.add('marker');
+        const marker = new mapboxgl.Marker({
+            color: '#3898ff'
+        })
          
-        new mapboxgl.Marker(el)
+        new mapboxgl.Marker(marker)
             .setLngLat(feature.geometry.coordinates)
             .setPopup(
                 new mapboxgl.Popup({ offset: 25 }) // add popups
@@ -106,7 +107,12 @@ function setUpMap(center) {
                 )
         .addTo(map);
     }
+
+    map.dragPan.disable();
+    map.keyboard.disable();
+    map.doubleClickZoom.disable();
 }
+
 
 // Event listeners
 

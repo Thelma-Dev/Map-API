@@ -151,7 +151,7 @@ section {
 }
   
 .banner-text h2 {
-    font-size: 6.5rem;
+    font-size: 5.5rem;
     font-weight: 800;
     letter-spacing: -0.2px;
 }
@@ -336,7 +336,8 @@ img {
     background-color: rgba(115, 115, 116, 0.3);
 }
 
-.marker {
+/* To create a marker manually */
+/* .marker {
     background-image: url(../img/pindrop.png);
     background-size: cover;
     width: 40px;
@@ -353,7 +354,7 @@ img {
   
 .mapboxgl-popup-content {
     text-align: center;
-}
+} */
 
 /* -------------------------------- */
 /*           Footer                 */
